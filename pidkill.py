@@ -4,7 +4,7 @@ def handler():
     print('killing process ...')
     cmd = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
     output, error = cmd.communicate()
-    target_process = "python"
+    target_process = "python3"
     for line in output.splitlines():
         if target_process in str(line):
             pid = int(line.split()[0])
